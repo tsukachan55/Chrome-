@@ -19,6 +19,8 @@ chrome.contextMenus.onClicked.addListener(async (info, tab) => {
                     target: { tabId: tab.id },
                     files: ['content.js']
                 });
+                // スクリプトの初期化を待つ
+                await new Promise(resolve => setTimeout(resolve, 100));
             }
 
             // テーブルデータの取得を試みる
